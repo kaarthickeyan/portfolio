@@ -16,9 +16,10 @@ const PROJECTS = {
   }
 }
 
-export default function ProjectDetail() {
+export default function ProjectDetail(): JSX.Element {
   const { id } = useParams()
-  const project = id ? PROJECTS[id.replace('-', '_')] : null
+  const projectKey = id?.replace('-', '_') as keyof typeof PROJECTS
+  const project = projectKey && projectKey in PROJECTS ? PROJECTS[projectKey] : null
 
   if (!project) return (
     <section className="py-12">
