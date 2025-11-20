@@ -7,7 +7,7 @@ import './index.css'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Nav />
       <App />
     </BrowserRouter>
