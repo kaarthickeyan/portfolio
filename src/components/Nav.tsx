@@ -19,7 +19,7 @@ export default function Nav(): JSX.Element {
   return (
     <nav className="fixed top-0 w-full bg-gradient-to-b from-slate-950/95 to-slate-950/80 backdrop-blur-md border-b border-slate-800/50 sticky z-40">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500 hover:scale-105 transition-transform">
+        <a href="/portfolio/" className="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500 hover:scale-105 transition-transform">
           Kaarthickeyan D
         </a>
 

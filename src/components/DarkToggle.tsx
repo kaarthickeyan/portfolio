@@ -44,8 +44,9 @@ export default function DarkToggle(): JSX.Element {
       aria-label="Toggle dark mode"
       aria-pressed={isDark ? 'true' : 'false'}
       title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      onClick={() => setIsDark(v => !v)}
-      className="p-2 rounded-full bg-slate-800/60 text-slate-100 hover:scale-105 transition-transform"
+      onClick={() => setIsDark(v => { const next = !v; console.debug('DarkToggle clicked ->', next); return next })}
+      className="p-2 rounded-full hover:scale-105 transition-transform"
+      style={{ background: 'var(--card)', color: 'var(--text)' }}
     >
       {isDark ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
     </button>
