@@ -17,13 +17,13 @@ const achievementsData = [
 
 export default function Achievements(): JSX.Element {
   return (
-    <section id="achievements" className="w-full py-20 px-4 bg-slate-950/50">
+    <section id="achievements" className="w-full py-20 px-4 bg-theme-section">
       <div className="max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500">
             Achievements & Awards
           </motion.h2>
-          <motion.p variants={item} className="text-slate-400 mb-12 text-lg">
+          <motion.p variants={item} className="text-theme-tertiary mb-12 text-lg">
             Recognition for innovation, technical excellence, and problem-solving impact.
           </motion.p>
 
@@ -32,18 +32,18 @@ export default function Achievements(): JSX.Element {
               <motion.div
                 key={idx}
                 variants={item}
-                className="group relative flex gap-4 p-6 rounded-lg border border-slate-700 hover:border-cyan-400/50 bg-gradient-to-r from-slate-800/50 to-slate-900/50 hover:from-slate-800 hover:to-slate-900 transition-all"
+                className="group relative flex gap-4 p-6 rounded-lg border border-theme hover:border-theme-accent bg-gradient-to-r from-theme-card to-theme-secondary hover:from-theme-card hover:to-theme-card transition-all"
               >
                 {/* Rank badge */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400/20 to-violet-500/20 flex items-center justify-center text-2xl">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-theme-accent/20 to-violet-500/20 flex items-center justify-center text-2xl">
                   {achievement.rank}
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold mb-1 group-hover:text-cyan-300 transition-colors">{achievement.title}</h3>
-                  <p className="text-sm text-slate-400 mb-2">{achievement.date}</p>
-                  <p className="text-slate-300 text-sm">{achievement.description}</p>
+                  <h3 className="text-lg font-bold mb-1 text-theme-primary group-hover:text-theme-accent transition-colors">{achievement.title}</h3>
+                  <p className="text-sm text-theme-tertiary mb-2">{achievement.date}</p>
+                  <p className="text-theme-secondary text-sm">{achievement.description}</p>
                 </div>
               </motion.div>
             ))}

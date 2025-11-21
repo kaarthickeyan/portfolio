@@ -1,22 +1,129 @@
 :root {
   /* Light theme (default) */
   --bg: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f3f4f6 100%);
+  --bg-solid: #f8fafc;
   --card: #ffffff;
+  --card-hover: #f3f4f6;
+  --card-border: #e2e8f0;
   --text: #0f1722;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
   --accent: #06b6d4;
+  --accent-light: #22d3ee;
+  --nav-bg: rgba(15, 23, 42, 0.95);
+  --button-primary-bg: #0ea5e9;
+  --button-secondary-bg: #1e293b;
+  --border: #cbd5e1;
+  --section-bg: rgba(248, 250, 252, 0.5);
 }
 
 /* Dark theme variables applied when .dark is present on <html> */
 .dark {
   --bg: linear-gradient(180deg, #0a0e1a 0%, #0f1420 50%, #08090f 100%);
+  --bg-solid: #0f1420;
   --card: #0b1220;
+  --card-hover: #1a2332;
+  --card-border: #1e2939;
   --text: #e6eef8;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
   --accent: #7dd3fc;
+  --accent-light: #22d3ee;
+  --nav-bg: rgba(15, 23, 42, 0.95);
+  --button-primary-bg: #06b6d4;
+  --button-secondary-bg: #1e293b;
+  --border: #334155;
+  --section-bg: rgba(15, 23, 42, 0.5);
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Theme-aware background utilities */
+.bg-theme-primary {
+  background: var(--bg);
+}
+
+.bg-theme-solid {
+  background-color: var(--bg-solid);
+}
+
+.bg-theme-card {
+  background-color: var(--card);
+}
+
+.bg-theme-section {
+  background: var(--section-bg);
+}
+
+.bg-theme-secondary {
+  background-color: var(--card-hover);
+}
+
+.hover\:bg-theme-secondary:hover {
+  background-color: var(--card-hover);
+}
+
+/* Theme-aware text utilities */
+.text-theme-primary {
+  color: var(--text);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-theme-accent {
+  color: var(--accent);
+}
+
+/* Theme-aware border utilities */
+.border-theme {
+  border-color: var(--card-border);
+}
+
+.border-t-theme {
+  border-top-color: var(--border);
+}
+
+.border-b-theme {
+  border-bottom-color: var(--border);
+}
+
+.hover\:border-theme-accent:hover {
+  border-color: var(--accent);
+}
+
+/* Navigation styles */
+.nav-bg {
+  background-color: var(--nav-bg);
+  border-bottom-color: var(--border);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #0891b2);
+  color: #0f1722;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: var(--button-secondary-bg);
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
 
 /* Global Styles */
 * {

@@ -37,7 +37,7 @@ const skillsData = {
 
 export default function Skills(): JSX.Element {
   return (
-    <section id="skills" className="w-full py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section id="skills" className="w-full py-20 px-4 bg-gradient-to-b from-theme-solid to-theme-solid">
       <div className="max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500">
@@ -47,14 +47,14 @@ export default function Skills(): JSX.Element {
           <div className="grid md:grid-cols-2 gap-12 mt-10">
             {Object.entries(skillsData).map(([category, skills]) => (
               <motion.div key={category} variants={item} className="space-y-6">
-                <h3 className="text-xl font-bold text-cyan-300 mb-6">{category}</h3>
+                <h3 className="text-xl font-bold text-theme-accent mb-6">{category}</h3>
                 {skills.map(skill => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
-                      <span className="font-semibold text-slate-200">{skill.name}</span>
-                      <span className="text-cyan-300 text-sm">{skill.proficiency}%</span>
+                      <span className="font-semibold text-theme-primary">{skill.name}</span>
+                      <span className="text-theme-accent text-sm">{skill.proficiency}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-slate-700 overflow-hidden">
+                    <div className="h-2 rounded-full bg-theme-secondary overflow-hidden border border-theme">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.proficiency}%` }}

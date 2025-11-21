@@ -38,18 +38,18 @@ export default function Hero(): JSX.Element {
             <Typewriter words={['AI/ML Engineer', 'Solar AI Specialist', 'Data Scientist']} speed={60} pause={2000} />
           </motion.h1>
 
-          <motion.p variants={item} className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Building intelligent systems for <span className="text-cyan-300 font-semibold">solar optimization</span>, <span className="text-violet-400 font-semibold">emergency traffic routing</span>, and <span className="text-blue-400 font-semibold">data analytics</span>.
+          <motion.p variants={item} className="text-lg md:text-xl text-theme-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+            Building intelligent systems for <span className="text-theme-accent font-semibold">solar optimization</span>, <span className="text-violet-400 font-semibold">emergency traffic routing</span>, and <span className="text-blue-400 font-semibold">data analytics</span>.
           </motion.p>
 
           <motion.div variants={item} className="flex items-center justify-center gap-4 flex-wrap">
-            <a href="/Resume.pdf" target="_blank" rel="noreferrer" className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+            <a href="/Resume.pdf" target="_blank" rel="noreferrer" className="btn-primary hover:shadow-xl hover:scale-105 transition-all">
               Download Resume
             </a>
-            <a href="#projects" className="px-6 py-3 rounded-lg border-2 border-cyan-300 text-cyan-300 font-semibold hover:bg-cyan-300/10 transition-all">
+            <a href="#projects" className="px-6 py-3 rounded-lg border-2 border-theme-accent text-theme-accent font-semibold hover:bg-theme-accent/10 transition-all">
               View Projects
             </a>
-            <a href="#contact" className="px-6 py-3 rounded-lg bg-slate-700/50 text-slate-100 font-semibold hover:bg-slate-600 transition-all">
+            <a href="#contact" className="px-6 py-3 rounded-lg bg-theme-secondary text-theme-primary font-semibold hover:bg-theme-card transition-all">
               Get In Touch
             </a>
           </motion.div>

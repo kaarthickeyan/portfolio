@@ -52,13 +52,13 @@ export default function Projects(): JSX.Element {
   const filteredProjects = selectedTag ? PROJECTS.filter(p => p.tags.includes(selectedTag)) : PROJECTS
 
   return (
-    <section id="projects" className="w-full py-20 px-4 bg-slate-950/50">
+    <section id="projects" className="w-full py-20 px-4 bg-theme-section">
       <div className="max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500">
             Featured Projects
           </motion.h2>
-          <motion.p variants={item} className="text-slate-400 mb-8 text-lg">
+          <motion.p variants={item} className="text-theme-tertiary mb-8 text-lg">
             AI/ML systems solving real-world problems in solar systems, traffic intelligence, and data analytics.
           </motion.p>
 
@@ -67,7 +67,7 @@ export default function Projects(): JSX.Element {
             <button
               onClick={() => setSelectedTag(null)}
               className={`px-4 py-2 rounded-full font-semibold transition-all ${
-                selectedTag === null ? 'bg-cyan-400 text-slate-900' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                selectedTag === null ? 'bg-theme-accent text-slate-900' : 'bg-theme-secondary text-theme-primary hover:bg-theme-card'
               }`}
             >
               All
@@ -77,7 +77,7 @@ export default function Projects(): JSX.Element {
                 key={tag}
                 onClick={() => setSelectedTag(tag)}
                 className={`px-4 py-2 rounded-full font-semibold transition-all ${
-                  selectedTag === tag ? 'bg-cyan-400 text-slate-900' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                  selectedTag === tag ? 'bg-theme-accent text-slate-900' : 'bg-theme-secondary text-theme-primary hover:bg-theme-card'
                 }`}
               >
                 {tag}
@@ -92,7 +92,7 @@ export default function Projects(): JSX.Element {
                 key={project.id}
                 variants={item}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700 hover:border-cyan-400/50 transition-all cursor-pointer"
+                className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-theme-card to-theme-secondary border border-theme hover:border-theme-accent transition-all cursor-pointer"
                 onClick={() => setSelectedProject(project.id)}
               >
                 {/* Image overlay */}
@@ -103,23 +103,23 @@ export default function Projects(): JSX.Element {
                 )}
 
                 <div className="relative z-10 p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-300 transition-colors">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-theme-primary group-hover:text-theme-accent transition-colors">{project.title}</h3>
 
-                  <p className="text-slate-300 text-sm mb-4 line-clamp-3">{project.description}</p>
+                  <p className="text-theme-secondary text-sm mb-4 line-clamp-3">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map(tag => (
-                      <span key={tag} className="px-2 py-1 text-xs rounded bg-cyan-400/20 text-cyan-300 font-semibold">
+                      <span key={tag} className="px-2 py-1 text-xs rounded bg-theme-accent/20 text-theme-accent font-semibold">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-2 pt-4 border-t border-slate-700">
-                    <a href={project.repo} onClick={e => e.stopPropagation()} target="_blank" rel="noreferrer" className="flex-1 px-3 py-2 rounded text-sm font-semibold bg-slate-700 hover:bg-slate-600 text-center transition-colors">
+                  <div className="flex gap-2 pt-4 border-t border-theme">
+                    <a href={project.repo} onClick={e => e.stopPropagation()} target="_blank" rel="noreferrer" className="flex-1 px-3 py-2 rounded text-sm font-semibold bg-theme-secondary hover:bg-theme-card text-theme-primary transition-colors text-center">
                       Repository
                     </a>
-                    <button onClick={e => { e.stopPropagation(); setSelectedProject(project.id) }} className="flex-1 px-3 py-2 rounded text-sm font-semibold bg-cyan-400 text-slate-900 hover:bg-cyan-300 transition-colors">
+                    <button onClick={e => { e.stopPropagation(); setSelectedProject(project.id) }} className="flex-1 px-3 py-2 rounded text-sm font-semibold bg-theme-accent text-slate-900 hover:opacity-90 transition-opacity">
                       Details
                     </button>
                   </div>

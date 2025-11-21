@@ -29,13 +29,13 @@ export default function Contact(): JSX.Element {
   }
 
   return (
-    <section id="contact" className="w-full py-24 px-4 bg-slate-900">
+    <section id="contact" className="w-full py-24 px-4 bg-theme-solid">
       <div className="max-w-2xl mx-auto">
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500">
             Get In Touch
           </motion.h2>
-          <motion.p variants={item} className="text-slate-400 mb-10 text-lg">
+          <motion.p variants={item} className="text-theme-tertiary mb-10 text-lg">
             Have a project or collaboration idea? Let's connect and build something amazing together.
           </motion.p>
 
@@ -46,19 +46,19 @@ export default function Contact(): JSX.Element {
           ) : (
             <motion.form onSubmit={handleSubmit} variants={item} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-slate-300 mb-2">Name</label>
+                <label htmlFor="name" className="block text-sm font-semibold text-theme-primary mb-2">Name</label>
                 <input
                   id="name"
                   required
                   placeholder="Your name"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-theme-secondary border border-theme placeholder-theme-tertiary text-theme-primary focus:border-theme-accent focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-slate-300 mb-2">Email</label>
+                <label htmlFor="email" className="block text-sm font-semibold text-theme-primary mb-2">Email</label>
                 <input
                   id="email"
                   required
@@ -66,12 +66,12 @@ export default function Contact(): JSX.Element {
                   placeholder="your-email@example.com"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-theme-secondary border border-theme placeholder-theme-tertiary text-theme-primary focus:border-theme-accent focus:outline-none transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-slate-300 mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-theme-primary mb-2">Message</label>
                 <textarea
                   id="message"
                   required
@@ -79,7 +79,7 @@ export default function Contact(): JSX.Element {
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:border-cyan-400 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-theme-secondary border border-theme placeholder-theme-tertiary text-theme-primary focus:border-theme-accent focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -87,7 +87,7 @@ export default function Contact(): JSX.Element {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-900 font-bold hover:shadow-lg hover:shadow-cyan-400/50 transition-shadow"
+                className="btn-primary w-full hover:shadow-lg hover:shadow-theme-accent/50 transition-shadow"
               >
                 Send Message
               </motion.button>
@@ -95,13 +95,13 @@ export default function Contact(): JSX.Element {
           )}
 
           {/* Quick contact options */}
-          <motion.div variants={item} className="mt-12 pt-10 border-t border-slate-700">
-            <p className="text-slate-400 text-sm mb-6">Or reach out directly:</p>
+          <motion.div variants={item} className="mt-12 pt-10 border-t border-theme">
+            <p className="text-theme-tertiary text-sm mb-6">Or reach out directly:</p>
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:kaarthickeyan.d@gmail.com" className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold transition-colors">
+              <a href="mailto:kaarthickeyan.d@gmail.com" className="px-4 py-2 rounded-lg bg-theme-secondary hover:bg-theme-card text-theme-accent font-semibold transition-colors border border-theme">
                 Email: kaarthickeyan.d@gmail.com
               </a>
-              <a href="tel:+916383042509" className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold transition-colors">
+              <a href="tel:+916383042509" className="px-4 py-2 rounded-lg bg-theme-secondary hover:bg-theme-card text-theme-accent font-semibold transition-colors border border-theme">
                 Phone: +91 63830 42509
               </a>
             </div>

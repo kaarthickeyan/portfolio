@@ -35,13 +35,13 @@ const internshipsData = [
 
 export default function Internships(): JSX.Element {
   return (
-    <section id="internships" className="w-full py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section id="internships" className="w-full py-20 px-4 bg-gradient-to-b from-theme-solid to-theme-solid">
       <div className="max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="show" variants={container}>
           <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-500">
             Professional Experience
           </motion.h2>
-          <motion.p variants={item} className="text-slate-400 mb-12 text-lg">
+          <motion.p variants={item} className="text-theme-tertiary mb-12 text-lg">
             Internships where I've built ML systems and contributed to production tools.
           </motion.p>
 
@@ -50,23 +50,23 @@ export default function Internships(): JSX.Element {
               <motion.article
                 key={idx}
                 variants={item}
-                className="group relative overflow-hidden rounded-lg border border-slate-700 hover:border-cyan-400/50 bg-gradient-to-br from-slate-800/60 to-slate-900/60 hover:from-slate-800 hover:to-slate-900 p-8 transition-all"
+                className="group relative overflow-hidden rounded-lg border border-theme hover:border-theme-accent bg-gradient-to-br from-theme-card to-theme-secondary hover:from-theme-card hover:to-theme-card p-8 transition-all"
               >
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between md:gap-4 mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold mb-1 text-cyan-300">{internship.title}</h3>
-                      <p className="text-lg font-semibold text-slate-300">{internship.company}</p>
-                      <p className="text-sm text-slate-400">{internship.period}</p>
+                      <h3 className="text-2xl font-bold mb-1 text-theme-accent">{internship.title}</h3>
+                      <p className="text-lg font-semibold text-theme-primary">{internship.company}</p>
+                      <p className="text-sm text-theme-tertiary">{internship.period}</p>
                     </div>
                   </div>
 
-                  <p className="text-slate-300 mb-6">{internship.description}</p>
+                  <p className="text-theme-secondary mb-6">{internship.description}</p>
 
                   <ul className="space-y-2">
                     {internship.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-slate-300">
-                        <span className="text-cyan-400 font-bold mt-1">✓</span>
+                      <li key={idx} className="flex items-start gap-3 text-theme-secondary">
+                        <span className="text-theme-accent font-bold mt-1">✓</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
